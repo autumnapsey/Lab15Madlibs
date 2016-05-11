@@ -2,12 +2,17 @@ var app = angular.module('app');
 
 app.factory('myService', function(){
 	var words = "";
+	var words2 = "";
 	return {
-		saveData: function(string){
+		saveData: function(string, string2){
 			words = string;
+			words2 = string2;
 		},
 		getData: function(){
-			return words;
+			return {
+				string: words,
+				string2: words2
+			};
 		}
-	}
+	};
 });
